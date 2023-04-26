@@ -12,25 +12,26 @@ import static org.junit.Assert.assertEquals;
 
 public class TesteWeb {
     ChromeDriver driver;
-    @Before
-    public void inicializaTeste(){
-        WebDriverManager.chromedriver().setup();
-        ChromeDriver driver;
 
+    @Before
+    public void inicializaTeste() {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
         driver.get("https://www.chronosacademy.com.br");
     }
+
     @Test
-    public void primeiroTeste(){
-        String xpathTitulo = "//section[2]//h4"
+    public void primeiroTeste() {
+        String xpathTitulo = "//section[2]//h4";
         WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo));
         String titulo = txtTitulo.getText();
-        assertEquals("Porque Tempo É Conhecimento.",titulo);
+        assertEquals("Porque Tempo É Conhecimento.", titulo);
     }
+
     @After
-    public void finalizaTeste(){
+    public void finalizaTeste() {
         driver.quit();
     }
 }
+
