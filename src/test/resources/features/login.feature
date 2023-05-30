@@ -29,7 +29,7 @@ Funcionalidade: Login
 
     Exemplos:
       | identificacao       | login   | password | remember |
-      | campos obrigatorios | chronos | senha    | true     |
+      | campos obrigatorios | chronos | senha    | false    |
       | todos os campos     | chronos | senha    | true     |
 
   Esquema do Cenario: Realizar login com <identificacao>
