@@ -14,11 +14,11 @@ public class LoginPage {
     }
 
     public void clickbtnLogin() {
-        Driver.visibilityof(loginMap.btnLogin);
+        Driver.visibilityOf(loginMap.btnLogin);
         loginMap.btnLogin.click();
     }
 
-    public void clickBtnFechar() {
+    public void clickbtnFechar() {
         loginMap.btnFechar.click();
 
     }
@@ -28,18 +28,22 @@ public class LoginPage {
     }
 
     public void setInpUserName(String username) {
-        loginMap.inpUserName.sendKeys(username);
+        if (username!= null) {
+            loginMap.inpUserName.sendKeys(username);
+        }
     }
 
     public void setInpPassword(String password) {
-        loginMap.inpPassword.sendKeys(password);
+        if (password !=null) {
+            loginMap.inpPassword.sendKeys(password);
+        }
     }
 
     public void clickInpRemember() {
         loginMap.inpRemember.click();
     }
     public void clickLinkCreateAccount(){
-        loginMap.LinlCreateAccount.click();
+        loginMap.linkCreateAccount.click();
     }
     public void clickBtnSignIn(){
         loginMap.btnSignIn.click();
@@ -48,9 +52,13 @@ public class LoginPage {
         return loginMap.btnSignIn.isEnabled();
     }
     public void visibilityOFBtnFechar(){
-        Driver.visibilityof(loginMap.btnFechar);
+        Driver.visibilityOf(loginMap.btnFechar);
     }
     public void invisibilityOFBtnFechar(){
-        Driver.invisibilityof(loginMap.btnFechar);
+        Driver.invisibilityOf(loginMap.btnFechar);
+    }
+
+    public void aguardaLoader(){
+        Driver.attributeChange(loginMap.divLoader, "display", "none");
     }
 }
